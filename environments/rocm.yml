@@ -42,3 +42,5 @@ dependencies:
     - ftfy
     - pydub
     - diffusers
+    - --find-links=https://0cc4m.github.io/KoboldAI/gptq-whl-links.html
+    - quant_rocm
