@@ -48,8 +48,8 @@ class ProbabilityVisualization:
             else 0
         )
         for batch_index, batch in enumerate(scores):
-            probs = F.softmax(batch, dim=-1).cpu().numpy()
-
+            batch = batch.to(torch.float32)
+	    probs = F.softmax(batch, dim=-1).cpu().numpy()
             token_prob_info = []
             for token_id, score in sorted(
                 enumerate(probs), key=lambda x: x[1], reverse=True
